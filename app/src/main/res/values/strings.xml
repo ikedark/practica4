@@ -4,4 +4,10 @@
     <string name="welcome_text">Welcome to the Portales!</string>
     <string name="welcome_description">Taqueria los Portales is a quick, casual restaurant.</string>
     <string name="button_start">get started!</string>
+    <string name="name">Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="e_mail">E-mail</string>
+    <string name="password">Password</string>
+    <string name="terms"></string>
+    <string name=""></string>
 </resources>
