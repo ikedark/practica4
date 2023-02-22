@@ -11,34 +11,36 @@ import android.widget.ImageView
 import android.widget.ListView
 import android.widget.TextView
 
-class SopasActivity : AppCompatActivity() {
+class DrinksActivity : AppCompatActivity() {
     var menu: ArrayList<Product> = ArrayList<Product>()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_sopas)
+        setContentView(R.layout.activity_drinks)
 
         agregarProductos()
-
         var listview: ListView = findViewById(R.id.listview) as ListView
-        var adaptador: AdaptadorProductos = AdaptadorProductos(this, menu)
+        var adaptador: AdaptadorProductos = AdaptadorProductos(this,menu)
         listview.adapter = adaptador
     }
 
-    fun agregarProductos() {
-        menu.add(Product("Pozole", R.drawable.pozole, "Weekends only", 5.99))
-        menu.add(Product("Menudo", R.drawable.menudo, "Wednesday to Sunday", 5.99))
-        menu.add(Product("Caldo de Res", R.drawable.caldores, "", 5.99))
-        menu.add(Product("Caldo de Camarón", R.drawable.caldocamaron, "Shrimp soup", 12.99))
-        menu.add(Product("Sopa de Mariscos", R.drawable.sopamariscos, "Seafood soup", 19.99))
-        menu.add(Product("Coctel de Camaron", R.drawable.coctel, "Shrimp cocktail", 14.99))
+    fun agregarProductos(){
+        menu.add(Product("Soda 20oz.",R.drawable.sodas, "",2.99))
+        menu.add(Product("Jarritos",R.drawable.jarritos,"",2.35))
+        menu.add(Product("Domestic Beer",R.drawable.domesticbeer,"",3.55))
+        menu.add(Product("Mexican Beer",R.drawable.mexicanbeer,"",3.99))
+        menu.add(Product("Micheladas",R.drawable.michelada,"",6.75))
+        menu.add(Product("Caguama",R.drawable.caguama,"",8.99))
+        menu.add(Product("Caguama Michelada",R.drawable.caguamamichelada,"",10.99))
+        menu.add(Product("Cubetazos",R.drawable.cubetazo,"",21.99))
+        menu.add(Product("Charolazo con Camarones",R.drawable.charolazo,"",21.99))
+        menu.add(Product("Cubetazo (6 cervezas",R.drawable.cubetasix,"",21.99))
     }
 
-    private class AdaptadorProductos : BaseAdapter {
+    private class AdaptadorProductos: BaseAdapter {
         var productos = ArrayList<Product>()
-        var contexto: Context? = null
+        var contexto: Context?=null
 
-        constructor(contexto: Context, productos: ArrayList<Product>) {
+        constructor(contexto: Context, productos: ArrayList<Product>){
             this.productos = productos
             this.contexto = contexto
         }
@@ -58,7 +60,7 @@ class SopasActivity : AppCompatActivity() {
         override fun getView(p0: Int, p1: View?, p2: ViewGroup?): View {
             var prod = productos[p0]
             var inflador = LayoutInflater.from(contexto)
-            var vista = inflador.inflate(R.layout.producto_view, null)
+            var vista = inflador.inflate(R.layout.producto_view,null)
 
             var imagen = vista.findViewById(R.id.producto_img) as ImageView
             var nombre = vista.findViewById(R.id.producto_nombre) as TextView

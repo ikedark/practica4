@@ -15,6 +15,7 @@ class MenuActivity : AppCompatActivity() {
         var btnCombinations: Button = findViewById(R.id.btn_combinations) as Button
         var btnTortas: Button = findViewById(R.id.btn_tortas) as Button
         var btnSopas: Button = findViewById(R.id.btn_sopas) as Button
+        var btnDrinks: Button = findViewById(R.id.btn_drinks) as Button
 
         btnAntojitos.setOnClickListener {
             var intent: Intent = Intent(this, ProductosActivity::class.java)
@@ -38,6 +39,11 @@ class MenuActivity : AppCompatActivity() {
 
         btnSopas.setOnClickListener {
             var intent: Intent = Intent(this, SopasActivity::class.java)
+            startActivity(intent)
+        }
+
+        btnDrinks.setOnClickListener {
+            var intent: Intent = Intent(this, DrinksActivity::class.java)
             startActivity(intent)
         }
     }
