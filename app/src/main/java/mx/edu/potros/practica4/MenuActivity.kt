@@ -11,9 +11,15 @@ class MenuActivity : AppCompatActivity() {
         setContentView(R.layout.activity_menu)
 
         var btnAntojitos: Button = findViewById(R.id.button_antojitos) as Button
+        var btnEspecialidades: Button = findViewById(R.id.button_especialidades) as Button
 
         btnAntojitos.setOnClickListener {
             var intent: Intent = Intent(this, ProductosActivity::class.java)
+            startActivity(intent)
+        }
+
+        btnEspecialidades.setOnClickListener {
+            var intent: Intent = Intent(this, EspecialidadesActivity::class.java)
             startActivity(intent)
         }
     }
