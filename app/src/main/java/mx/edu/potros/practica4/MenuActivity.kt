@@ -19,31 +19,37 @@ class MenuActivity : AppCompatActivity() {
 
         btnAntojitos.setOnClickListener {
             var intent: Intent = Intent(this, ProductosActivity::class.java)
+            intent.putExtra("menuType","Antojitos")
             startActivity(intent)
         }
 
         btnEspecialidades.setOnClickListener {
-            var intent: Intent = Intent(this, EspecialidadesActivity::class.java)
+            var intent: Intent = Intent(this, ProductosActivity::class.java)
+            intent.putExtra("menuType","Especialidades")
             startActivity(intent)
         }
 
         btnCombinations.setOnClickListener {
-            var intent: Intent = Intent(this, CombinationsActivity::class.java)
+            var intent: Intent = Intent(this, ProductosActivity::class.java)
+            intent.putExtra("menuType","Combinations")
             startActivity(intent)
         }
 
         btnTortas.setOnClickListener {
-            var intent: Intent = Intent(this, TortasActivity::class.java)
+            var intent: Intent = Intent(this, ProductosActivity::class.java)
+            intent.putExtra("menuType","Tortas")
             startActivity(intent)
         }
 
         btnSopas.setOnClickListener {
-            var intent: Intent = Intent(this, SopasActivity::class.java)
+            var intent: Intent = Intent(this, ProductosActivity::class.java)
+            intent.putExtra("menuType","Sopas")
             startActivity(intent)
         }
 
         btnDrinks.setOnClickListener {
-            var intent: Intent = Intent(this, DrinksActivity::class.java)
+            var intent: Intent = Intent(this, ProductosActivity::class.java)
+            intent.putExtra("menuType","Drinks")
             startActivity(intent)
         }
     }
